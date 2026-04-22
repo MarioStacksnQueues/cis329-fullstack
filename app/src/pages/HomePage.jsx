@@ -3,6 +3,23 @@ import { supabase } from '../lib/supabaseClient.js'
 import ProductCard from '../components/ProductCard.jsx'
 import Spinner from '../components/Spinner.jsx'
 
+const SKELETON_COUNT = 6
+
+function SkeletonCard() {
+  return (
+    <article className="product-card product-card--skeleton" aria-hidden="true">
+      <div className="product-card__media product-card__media--skeleton" />
+      <div className="product-card__body">
+        <span className="skeleton-line skeleton-line--xs" />
+        <span className="skeleton-line skeleton-line--md" />
+        <span className="skeleton-line skeleton-line--sm" />
+        <span className="skeleton-line skeleton-line--price" />
+        <span className="skeleton-block skeleton-block--button" />
+      </div>
+    </article>
+  )
+}
+
 export default function HomePage() {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
@@ -33,9 +50,16 @@ export default function HomePage() {
       </div>
 
       {loading && (
-        <div className="centered-block">
-          <Spinner label="Loading products" />
-        </div>
+        <>
+          <div className="sr-only" role="status">
+            <Spinner label="Loading products" />
+          </div>
+          <div className="product-grid" aria-busy="true">
+            {Array.from({ length: SKELETON_COUNT }).map((_, i) => (
+              <SkeletonCard key={i} />
+            ))}
+          </div>
+        </>
       )}
 
       {!loading && error && (

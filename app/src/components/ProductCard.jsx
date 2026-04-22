@@ -68,7 +68,7 @@ export default function ProductCard({ product, priority = false }) {
             decoding="async"
             fetchpriority={priority ? 'high' : 'auto'}
             width="600"
-            height="600"
+            height="450"
           />
         ) : (
           <div className="product-card__placeholder" aria-hidden="true">

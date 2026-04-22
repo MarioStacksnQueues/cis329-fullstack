@@ -68,7 +68,7 @@ export default function CartPage() {
                 <li key={line.product_id} className="cart__line">
                   <div className="cart__media">
                     {line.image_url ? (
-                      <img src={line.image_url} alt={line.name} loading="lazy" />
+                      <img src={line.image_url} alt={line.name} loading="lazy" width="80" height="80" decoding="async" />
                     ) : (
                       <div className="cart__media-placeholder" aria-hidden="true" />
                     )}
