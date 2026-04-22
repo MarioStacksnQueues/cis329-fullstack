@@ -29,7 +29,14 @@ export default function ProductCard({ product }) {
     <article className="product-card">
       <div className="product-card__media">
         {product.image_url ? (
-          <img src={product.image_url} alt={imageAlt} loading="lazy" />
+          <img
+            src={product.image_url}
+            alt={imageAlt}
+            loading="lazy"
+            decoding="async"
+            width="600"
+            height="600"
+          />
         ) : (
           <div className="product-card__placeholder" aria-hidden="true">
             No image
@@ -38,7 +45,7 @@ export default function ProductCard({ product }) {
       </div>
       <div className="product-card__body">
         <p className="product-card__category">{product.category}</p>
-        <h3 className="product-card__name">{product.name}</h3>
+        <h2 className="product-card__name">{product.name}</h2>
         {product.description && (
           <p className="product-card__desc">{product.description}</p>
         )}
