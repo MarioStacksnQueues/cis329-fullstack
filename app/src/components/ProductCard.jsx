@@ -9,7 +9,7 @@ function formatPrice(value) {
   }).format(Number.isFinite(num) ? num : 0)
 }
 
-export default function ProductCard({ product }) {
+export default function ProductCard({ product, priority = false }) {
   const { addItem } = useCart()
   const [added, setAdded] = useState(false)
 
@@ -32,8 +32,9 @@ export default function ProductCard({ product }) {
           <img
             src={product.image_url}
             alt={imageAlt}
-            loading="lazy"
+            loading={priority ? 'eager' : 'lazy'}
             decoding="async"
+            fetchpriority={priority ? 'high' : 'auto'}
             width="600"
             height="600"
           />

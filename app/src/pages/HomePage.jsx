@@ -50,8 +50,8 @@ export default function HomePage() {
 
       {!loading && !error && products.length > 0 && (
         <div className="product-grid">
-          {products.map((p) => (
-            <ProductCard key={p.id} product={p} />
+          {products.map((p, i) => (
+            <ProductCard key={p.id} product={p} priority={i < 2} />
           ))}
         </div>
       )}
