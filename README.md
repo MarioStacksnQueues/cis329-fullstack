@@ -25,9 +25,7 @@ full-stack/
     seed-data.sql     12 products across 4 categories
   docs/
     component-hierarchy.md   component tree, state flow, auth diagram
-    DEPLOYMENT.md            GCP Cloud Run and Compute Engine steps
-    LIGHTHOUSE.md            how to generate the audit PDF
-  instructions/       original assignment screenshots
+    lighthouse-audit.pdf     Lighthouse report (Performance/Accessibility/BP/SEO)
 ```
 
 ## Prerequisites
@@ -81,13 +79,13 @@ The production bundle lands in `app/dist/`.
 
 ## Deployment
 
-Two supported paths. Cloud Run is recommended because it scales to zero
-and takes less manual setup. See `docs/DEPLOYMENT.md` for both.
+Deployed to Google Cloud Run using `app/Dockerfile` and `app/cloudbuild.yaml`.
+The container serves the static Vite build through nginx (`app/nginx.conf`).
 
-- **Cloud Run**: build a static-site container, push to Artifact Registry,
-  deploy.
-- **Compute Engine**: provision a small VM, install nginx, copy the
-  `dist/` folder, point a reverse proxy at it.
+```bash
+cd app
+gcloud builds submit --config cloudbuild.yaml
+```
 
 ## Environment variables
 
@@ -104,10 +102,10 @@ should never be committed or shipped to the browser.
 
 ## Deliverables checklist
 
-- [x] Live GCP URL (see `docs/DEPLOYMENT.md`)
+- [x] Live GCP URL: https://rich-inter-spa-1015753113669.us-central1.run.app
 - [x] GitHub repository with this README
 - [x] Demo video (5 minutes max, MP4 or link)
-- [x] Lighthouse audit PDF showing 90+ scores (`docs/LIGHTHOUSE.md`)
+- [x] Lighthouse audit PDF showing 90+ scores (`docs/lighthouse-audit.pdf`)
 - [x] SQL export (`database/schema.sql`)
 
 ## License
