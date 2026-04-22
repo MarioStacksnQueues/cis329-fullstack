@@ -1,0 +1,21 @@
+# Cloud Build config for the Vite + nginx container.
+# Invoked via `gcloud builds submit --config cloudbuild.yaml --substitutions=...`.
+# The Supabase values are baked in at build time because Vite reads them during `vite build`.
+
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - build
+      - --build-arg
+      - VITE_SUPABASE_URL=${_VITE_SUPABASE_URL}
+      - --build-arg
+      - VITE_SUPABASE_ANON_KEY=${_VITE_SUPABASE_ANON_KEY}
+      - -t
+      - gcr.io/$PROJECT_ID/rich-inter-spa:latest
+      - .
+
+images:
+  - gcr.io/$PROJECT_ID/rich-inter-spa:latest
+
+options:
+  logging: CLOUD_LOGGING_ONLY

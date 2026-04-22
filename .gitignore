@@ -1,0 +1,13 @@
+app/node_modules
+app/dist
+app/dist-ssr
+app/.env
+app/.env.local
+app/.env.*.local
+*.local
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.log
+Thumbs.db
