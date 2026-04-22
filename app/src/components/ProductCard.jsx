@@ -9,6 +9,33 @@ function formatPrice(value) {
   }).format(Number.isFinite(num) ? num : 0)
 }
 
+function unsplashUrl(url, width) {
+  const base = url.split('?')[0]
+  return `${base}?w=${width}&q=60&fm=webp&auto=compress`
+}
+
+function pexelsUrl(url, width) {
+  const base = url.split('?')[0]
+  return `${base}?auto=compress&cs=tinysrgb&w=${width}`
+}
+
+function buildSrc(url) {
+  if (!url) return ''
+  if (url.includes('images.unsplash.com')) return unsplashUrl(url, 600)
+  return url
+}
+
+function responsiveSrcSet(url) {
+  if (!url) return null
+  if (url.includes('images.unsplash.com')) {
+    return `${unsplashUrl(url, 300)} 300w, ${unsplashUrl(url, 600)} 600w`
+  }
+  if (url.includes('images.pexels.com')) {
+    return `${pexelsUrl(url, 300)} 300w, ${pexelsUrl(url, 600)} 600w`
+  }
+  return null
+}
+
 export default function ProductCard({ product, priority = false }) {
   const { addItem } = useCart()
   const [added, setAdded] = useState(false)
@@ -25,12 +52,17 @@ export default function ProductCard({ product, priority = false }) {
     ? `${product.name} (${product.category})`
     : ''
 
+  const imageSrc = product.image_url ? buildSrc(product.image_url) : ''
+  const imageSrcSet = responsiveSrcSet(product.image_url)
+
   return (
     <article className="product-card">
       <div className="product-card__media">
         {product.image_url ? (
           <img
-            src={product.image_url}
+            src={imageSrc}
+            srcSet={imageSrcSet || undefined}
+            sizes={imageSrcSet ? '(max-width: 600px) 90vw, 300px' : undefined}
             alt={imageAlt}
             loading={priority ? 'eager' : 'lazy'}
             decoding="async"

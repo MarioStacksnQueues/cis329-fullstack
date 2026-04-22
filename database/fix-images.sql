@@ -9,6 +9,6 @@ update public.products set image_url = 'https://images.pexels.com/photos/3061818
 update public.products set image_url = 'https://images.pexels.com/photos/7004671/pexels-photo-7004671.jpeg?auto=compress&cs=tinysrgb&w=600' where name = 'Scented Soy Candle, Cedar and Vanilla';
 update public.products set image_url = 'https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg?auto=compress&cs=tinysrgb&w=600' where name = 'Matte Black Table Lamp';
 update public.products set image_url = 'https://images.pexels.com/photos/9594147/pexels-photo-9594147.jpeg?auto=compress&cs=tinysrgb&w=600' where name = 'Heavyweight Cotton Crewneck, Oatmeal';
-update public.products set image_url = 'https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&q=75&auto=format' where name = 'Everyday Canvas Tote Bag';
+update public.products set image_url = 'https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&q=60&fm=webp&auto=compress' where name = 'Everyday Canvas Tote Bag';
 update public.products set image_url = 'https://images.pexels.com/photos/30469934/pexels-photo-30469934.jpeg?auto=compress&cs=tinysrgb&w=600' where name = 'Insulated Stainless Water Bottle, 24oz';
-update public.products set image_url = 'https://images.unsplash.com/photo-1509762774605-f07235a08f1f?w=600&q=75&auto=format' where name = 'Ultralight Trail Backpack, 20L';
+update public.products set image_url = 'https://images.unsplash.com/photo-1509762774605-f07235a08f1f?w=600&q=60&fm=webp&auto=compress' where name = 'Ultralight Trail Backpack, 20L';
