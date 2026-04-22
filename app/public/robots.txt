@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: /sitemap.xml
+Sitemap: https://rich-inter-spa-1015753113669.us-central1.run.app/sitemap.xml
