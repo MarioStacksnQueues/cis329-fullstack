@@ -4,7 +4,7 @@ update public.products set image_url = 'https://upload.wikimedia.org/wikipedia/c
 update public.products set image_url = 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Corsair_K65_1_2017-01-01.jpg' where name = 'Mechanical Keyboard, Tactile Brown Switches';
 update public.products set image_url = 'https://images.pexels.com/photos/7172701/pexels-photo-7172701.jpeg?auto=compress&cs=tinysrgb&w=600' where name = '4K Webcam with Built-In Ring Light';
 update public.products set image_url = 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Sandisk_extreme_portable_ssd.jpg' where name = 'Portable SSD, 1TB USB-C';
-update public.products set image_url = 'https://upload.wikimedia.org/wikipedia/commons/4/42/Hario_V60_dripper_%2830519007832%29.jpg' where name = 'Ceramic Pour-Over Coffee Dripper';
+update public.products set image_url = 'https://images.pexels.com/photos/8742029/pexels-photo-8742029.jpeg?auto=compress&cs=tinysrgb&w=600' where name = 'Ceramic Pour-Over Coffee Dripper';
 update public.products set image_url = 'https://images.pexels.com/photos/30618181/pexels-photo-30618181.jpeg?auto=compress&cs=tinysrgb&w=600' where name = 'Linen Throw Blanket, Sand';
 update public.products set image_url = 'https://images.pexels.com/photos/7004671/pexels-photo-7004671.jpeg?auto=compress&cs=tinysrgb&w=600' where name = 'Scented Soy Candle, Cedar and Vanilla';
 update public.products set image_url = 'https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg?auto=compress&cs=tinysrgb&w=600' where name = 'Matte Black Table Lamp';
