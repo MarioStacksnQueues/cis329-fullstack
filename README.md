@@ -104,7 +104,7 @@ should never be committed or shipped to the browser.
 
 - [x] Live GCP URL: https://rich-inter-spa-1015753113669.us-central1.run.app
 - [x] GitHub repository with this README
-- [x] Demo video (5 minutes max, MP4 or link)
+- [x] Demo video: https://www.loom.com/share/f7716bddcc474b8e9940ae07ac0d0c87
 - [x] Lighthouse audit PDF showing 90+ scores (`docs/lighthouse-audit.pdf`)
 - [x] SQL export (`database/schema.sql`)
 
